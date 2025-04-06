@@ -7,20 +7,20 @@ body {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 300px;
+    height: 300px;
+    border: 2px solid black; /* Outer border for the board */
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #333;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 2em;
-    cursor: pointer;
+    justify-content: center;
+    border: 1px solid black; /* Consistent border thickness */
+    box-sizing: border-box; /* Ensures borders are included in the element's size */
+    font-size: 2rem;
 }
 
 .cell:first-child,
