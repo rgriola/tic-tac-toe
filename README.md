@@ -1,2 +1,3 @@
-# tic-tac-toe
-demo game made with Gemini
+# Tic-Tac-Toe
+
+This project is a simple Tic-Tac-Toe game built with HTML, CSS, and JavaScript. ...
