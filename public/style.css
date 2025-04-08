@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #87CEEB; /* Sky blue background */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease; /* Smooth background color transitions */
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Player Name Display */
+.players {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 320px;
+}
+
+.player {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Label and Input Styles */
+#playerNameInput label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px; /* Set font size to 16px */
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#playerNameInput input {
+    /*width: 90%;*/
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 16px; /* Set font size to 16px */
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#playerNameInput input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#playerNameInput button {
+    padding: 10px 20px;
+    font-size: 16px; /* Set font size to 16px */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#playerNameInput button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Updated box-shadow */
+}
+
+/* Game Board Section */
+#gameContainer {
+    margin: 20px auto;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #333;
+    border: 5px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cell:active {
+    background-color: #ddd;
+}
+
+/* Status and Messages */
+.message {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2b435c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Restart Button */
+#restartBtn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(12, 1, 1, 0.2);
+    animation: flash 1s infinite alternate; /* Flashing effect */
+}
+
+#restartBtn:hover {
+    background-color: #218838;
+}
+
+/* Flashing Animation */
+@keyframes flash {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* Background Color Changes */
+body.player1-turn {
+    background: linear-gradient(to right, #87CEEB 50%, #5399b5 50%);
+}
+
+body.player2-turn {
+    background: linear-gradient(to left, #5399b5 50%, #87CEEB 50%);
+}
+
+body.winner {
+    background-color: #44d31d; /* Light green for winner */
+}
+
+body.draw {
+    background-color: #D3D3D3; /* Gray for draw */
+}

@@ -1,0 +1,59 @@
+function botMove() {
+    // Check if the Bot can win
+    for (let condition of winningConditions) {
+        const [a, b, c] = condition;
+        if (gameBoard[a] === 'O' && gameBoard[b] === 'O' && gameBoard[c] === '') {
+            makeBotMove(c);
+            return;
+        }
+        if (gameBoard[a] === 'O' && gameBoard[c] === 'O' && gameBoard[b] === '') {
+            makeBotMove(b);
+            return;
+        }
+        if (gameBoard[b] === 'O' && gameBoard[c] === 'O' && gameBoard[a] === '') {
+            makeBotMove(a);
+            return;
+        }
+    }
+
+    // Check if the Bot needs to block the opponent
+    for (let condition of winningConditions) {
+        const [a, b, c] = condition;
+        if (gameBoard[a] === 'X' && gameBoard[b] === 'X' && gameBoard[c] === '') {
+            makeBotMove(c);
+            return;
+        }
+        if (gameBoard[a] === 'X' && gameBoard[c] === 'X' && gameBoard[b] === '') {
+            makeBotMove(b);
+            return;
+        }
+        if (gameBoard[b] === 'X' && gameBoard[c] === 'X' && gameBoard[a] === '') {
+            makeBotMove(a);
+            return;
+        }
+    }
+
+    // Otherwise, pick a random move
+    const emptyCells = gameBoard.reduce((acc, cell, index) => {
+        if (cell === '') acc.push(index);
+        return acc;
+    }, []);
+
+    if (emptyCells.length > 0) {
+        const randomIndex = Math.floor(Math.random() * emptyCells.length);
+        makeBotMove(emptyCells[randomIndex]);
+    }
+}
+
+function makeBotMove(index) {
+    gameBoard[index] = currentPlayer;
+    cells[index].textContent = currentPlayer;
+
+    checkWin();
+
+    if (gameActive) {
+        currentPlayer = 'X';
+        updateMessage();
+        updateBackground(); // Update background after bot's turn
+    }
+}

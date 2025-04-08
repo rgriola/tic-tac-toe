@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+
+    <!-- Game Mode Selection -->
+    <div id="gameModeSelection" style="display: block;">
+        <p>Select Game Mode:</p>
+        <button id="playBot">Play Against Bot</button>
+        <button id="playFriend">Play Against Friend</button>
+    </div>
+
+    <!-- Player Name Input Section -->
+    <div id="playerNameInput" style="display: none;">
+        <p></p>
+        <label for="playerXName">The X Player:</label>
+        <input type="text" id="playerXName" placeholder="enter name" />
+        <br />
+        <label for="playerOName">The O Player:</label>
+        <input type="text" id="playerOName" placeholder="enter name" />
+        <br />
+        <button id="startGameBtn">PLAY!</button>
+    </div>
+
+    <!-- Game Board Section -->
+    <div id="gameContainer" style="display: none;">
+        <div class="players">
+            <div>
+                <div id="player1" class="player">The X Player:</div>
+                <span id="playerXDisplay"></span>
+            </div>
+            <div>
+                <div id="player2" class="player">The O Player:</div>
+                <span id="playerODisplay"></span>
+            </div>
+        </div>
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div class="message"></div>
+        <button id="restartBtn" style="display: none;">Play Again</button>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
